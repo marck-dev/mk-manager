@@ -1,7 +1,7 @@
 installDir=/etc/mk-d-manager
 fileName=mk-manager
 echo "Creating the intall directory..."
-# sudo mkdir -p $installDir
+sudo mkdir -p $installDir
 sleep 1
 echo "Creating the executable"
 touch $fileName
@@ -11,9 +11,9 @@ echo "python . \$@" >> $fileName
 chmod +x $fileName
 sleep 1
 echo "Coping the files..."
-# sudo cp . $installDir
+sudo cp . $installDir
 echo "Creating the references..."
-# ln -sf $installDir/$fileName /bin/$fileName
+ln -sf $installDir/$fileName /bin/$fileName
 echo "Compiling sources..."
 python -m compileall $installDir &> /dev/null
 printf "\e[0;36mDone!\e[0m\n"
