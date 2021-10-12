@@ -11,9 +11,9 @@ echo "python . \$@" >> $fileName
 chmod +x $fileName
 sleep 1
 echo "Coping the files..."
-sudo cp . $installDir
+sudo cp -r  . $installDir
 echo "Creating the references..."
-ln -sf $installDir/$fileName /bin/$fileName
+sudo ln -sf $installDir/$fileName /bin/$fileName
 echo "Compiling sources..."
 python -m compileall $installDir &> /dev/null
 printf "\e[0;36mDone!\e[0m\n"
